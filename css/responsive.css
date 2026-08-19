@@ -1,0 +1,346 @@
+/* =========================================================
+   A-H TRANSPORT — RESPONSIVE.CSS
+   Compact, mobile-first, theme-safe
+========================================================= */
+
+/* -------------------------
+   TABLET / SMALL LAPTOP
+-------------------------- */
+@media (max-width: 1050px) {
+
+    .container {
+        width: min(1180px, calc(100% - 32px));
+    }
+
+    .nav-menu {
+        gap: 18px;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 62px 0;
+    }
+
+    .hero-text {
+        max-width: 760px;
+    }
+
+    .hero-card {
+        max-width: 600px;
+        width: 100%;
+    }
+
+    .routes-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .why-grid {
+        gap: 40px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* -------------------------
+   TABLET
+-------------------------- */
+@media (max-width: 820px) {
+
+    .top-info span:last-child {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        top: calc(100% + 8px);
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 10px;
+
+        background: var(--dark);
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        border-radius: 14px;
+
+        box-shadow: var(--shadow-lg);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu > a {
+        padding: 10px 12px;
+        border-radius: 8px;
+    }
+
+    .nav-menu > a:hover,
+    .nav-menu > a.active {
+        background: rgba(255, 255, 255, 0.07);
+    }
+
+    .nav-menu > a:not(.nav-cta)::after {
+        display: none;
+    }
+
+    .nav-cta {
+        text-align: center;
+        margin-top: 6px;
+    }
+
+    .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trust-item:nth-child(2),
+    .trust-item:nth-child(4) {
+        border-right: 0;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+
+    .why-image {
+        min-height: 380px;
+    }
+
+    .why-image img {
+        min-height: 380px;
+    }
+
+    .image-placeholder {
+        min-height: 380px;
+    }
+
+    .routes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .booking-cta-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* -------------------------
+   MOBILE
+-------------------------- */
+@media (max-width: 560px) {
+
+    .container {
+        width: min(100% - 28px, 1180px);
+    }
+
+    .top-bar {
+        font-size: 11px;
+    }
+
+    .top-bar-content {
+        min-height: 36px;
+        justify-content: center;
+    }
+
+    .top-info {
+        gap: 10px;
+    }
+
+    .top-whatsapp {
+        display: none;
+    }
+
+    .nav-container {
+        min-height: 68px;
+    }
+
+    .logo-mark {
+        width: 42px;
+        height: 42px;
+        font-size: 14px;
+    }
+
+    .logo-text strong {
+        font-size: 16px;
+    }
+
+    .logo-text small {
+        font-size: 8px;
+        letter-spacing: 1.6px;
+    }
+
+    .hero-content {
+        padding: 52px 0;
+        gap: 28px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+        line-height: 1.06;
+        letter-spacing: -1px;
+    }
+
+    .hero-text > p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-trust {
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    .hero-trust strong {
+        font-size: 17px;
+    }
+
+    .hero-trust span {
+        font-size: 10px;
+    }
+
+    .hero-card {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .hero-card-header span:first-child {
+        font-size: 17px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .trust-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trust-item {
+        min-height: 78px;
+        padding: 14px 10px;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .trust-item:last-child {
+        border-bottom: 0;
+    }
+
+    .section {
+        padding: 68px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .section-heading h2,
+    .why-content h2 {
+        font-size: 30px;
+    }
+
+    .section-heading p {
+        font-size: 13px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-image {
+        height: 200px;
+    }
+
+    .service-card-content {
+        padding: 20px;
+    }
+
+    .why-image,
+    .why-image img {
+        min-height: 330px;
+    }
+
+    .routes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .route-card {
+        padding: 20px 16px;
+    }
+
+    .booking-cta {
+        padding: 60px 0;
+    }
+
+    .booking-cta-content {
+        gap: 22px;
+    }
+
+    .booking-cta h2 {
+        font-size: 30px;
+    }
+
+    .cta-buttons {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .footer-grid {
+        padding: 52px 0 38px;
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

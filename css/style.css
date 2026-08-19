@@ -1,0 +1,1708 @@
+::root {
+    --primary: #146EF5;
+    --primary-dark: #0B1F3A;
+    --secondary: #16A765;
+    --accent: #E31B23;
+
+    --dark: #0B1F3A;
+    --text: #59697A;
+    --muted: #8A98A8;
+
+    --light: #F4F7FB;
+    --white: #FFFFFF;
+    --border: #E3EAF2;
+
+    --shadow-sm: 0 8px 25px rgba(11, 31, 58, 0.06);
+    --shadow: 0 18px 45px rgba(11, 31, 58, 0.10);
+    --shadow-lg: 0 28px 70px rgba(11, 31, 58, 0.16);
+
+    --radius-sm: 10px;
+    --radius: 18px;
+    --radius-lg: 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: var(--dark);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.top-bar {
+    background: var(--dark);
+    color: var(--white);
+    font-size: 13px;
+}
+
+.top-bar-content {
+    min-height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-info {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.top-whatsapp {
+    color: #7df2b6;
+    font-weight: 700;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(229, 235, 242, 0.9);
+}
+
+.nav-container {
+    min-height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-mark {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--primary), #3989ff);
+    color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(20, 110, 245, 0.18);
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo-text strong {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+}
+
+.logo-text small {
+    margin-top: 5px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.nav-menu > a {
+    color: #536274;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.nav-menu > a:hover,
+.nav-menu > a.active {
+    color: var(--primary);
+}
+
+.nav-cta {
+    padding: 11px 18px;
+    color: var(--white) !important;
+    background: linear-gradient(135deg, var(--primary), #3989ff);
+    border-radius: 9px;
+    box-shadow: 0 8px 20px rgba(20, 110, 245, 0.18);
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background: var(--dark);
+    border-radius: 3px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 20, 40, 0.82) 0%,
+            rgba(5, 20, 40, 0.55) 45%,
+            rgba(5, 20, 40, 0.10) 100%
+        ),
+        url("../assets/images/hero/hero-banner.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-overlay {
+    display: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 70px;
+    align-items: center;
+    padding: 75px 0;
+}
+
+.hero-text {
+    color: var(--white);
+    max-width: 650px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    padding: 8px 14px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.09);
+    backdrop-filter: blur(10px);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #67A5FF;
+}
+
+.hero-text > p {
+    max-width: 560px;
+    color: rgba(255,255,255,0.82);
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-bottom: 36px;
+}
+
+.btn {
+    min-height: 50px;
+    padding: 0 22px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: #0755d7;
+}
+
+.btn-whatsapp {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.hero-trust {
+    display: flex;
+    gap: 35px;
+}
+
+.hero-trust div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-trust strong {
+    font-size: 19px;
+}
+
+.hero-trust span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.70);
+}
+
+
+/* =========================
+   HERO BOOKING CARD
+========================= */
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+}
+.hero-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-card-header span:first-child {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.online-dot {
+    font-size: 11px;
+    color: var(--secondary);
+    background: rgba(22, 167, 101, 0.10);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-size: 12px;
+    color: #536274;
+    font-weight: 700;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    min-height: 46px;
+    padding: 0 13px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+    background: var(--white);
+    color: var(--dark);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(11, 99, 246, 0.10);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.booking-btn {
+    width: 100%;
+    min-height: 50px;
+    color: var(--white);
+    background: var(--primary);
+    border: 0;
+    margin-top: 6px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+.booking-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+.form-note {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 11px;
+    color: #7B8795;
+}
+
+
+/* =========================
+   TRUST STRIP
+========================= */
+
+.trust-strip {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.trust-item {
+    min-height: 105px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-right: 1px solid var(--border);
+}
+
+.trust-item:last-child {
+    border-right: 0;
+}
+
+.trust-icon {
+    width: 45px;
+    height: 45px;
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(20, 110, 245, 0.08);
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.trust-item strong,
+.trust-item span {
+    display: block;
+}
+
+.trust-item strong {
+    font-size: 13px;
+}
+
+.trust-item span {
+    color: #7B8795;
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 100px 0;
+}
+
+.section-heading {
+    max-width: 680px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.section-tag {
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.section-heading h2,
+.why-content h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.15;
+    margin-top: 11px;
+}
+
+.section-heading p {
+    color: var(--text);
+    margin-top: 14px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-section {
+    background: var(--white);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.service-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow-sm);
+    transition: 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+}
+
+.service-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #EAF1F8;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: 0.4s ease;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.05);
+}
+
+.service-card-content {
+    position: relative;
+    padding: 25px;
+}
+
+.service-number {
+    position: absolute;
+    top: 22px;
+    right: 24px;
+
+    font-size: 12px;
+    font-weight: 800;
+    color: #8A98A8;
+}
+
+.service-card h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 21px;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.service-card p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.service-card a {
+    display: inline-flex;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 800;
+    transition: 0.25s ease;
+}
+
+.service-card a:hover {
+    transform: translateX(4px);
+}
+
+
+/* =========================
+   SERVICES RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-image {
+        height: 210px;
+    }
+
+}
+
+/* =========================
+   WHY SECTION
+========================= */
+
+.why-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.why-image {
+    min-height: 500px;
+    border-radius: 24px;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg, #d9e8f8, #eff5fb);
+}
+
+.image-placeholder {
+    height: 100%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #617285;
+    text-align: center;
+}
+
+.image-placeholder span {
+    font-size: 90px;
+    margin-bottom: 10px;
+}
+
+.image-placeholder p {
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.image-placeholder small {
+    margin-top: 5px;
+}
+
+.why-content h2 span {
+    display: block;
+    color: var(--primary);
+}
+
+.why-description {
+    color: var(--text);
+    margin: 18px 0 28px;
+    max-width: 600px;
+}
+
+.feature-list {
+    display: grid;
+    gap: 19px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.feature-check {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    background: rgba(22, 167, 101, 0.10);
+    color: var(--secondary);
+    border-radius: 50%;
+    font-weight: 900;
+}
+
+.feature-item h4 {
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.feature-item p {
+    color: var(--text);
+    font-size: 13px;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 28px;
+    color: var(--primary);
+    font-weight: 800;
+}
+
+
+/* =========================
+   ROUTES
+========================= */
+
+.routes-section {
+    background: var(--light);
+}
+
+.routes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.route-card {
+    padding: 28px 20px;
+    text-align: center;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    transition: 0.3s ease;
+}
+
+.route-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.route-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 14px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #edf5ff;
+    font-size: 23px;
+}
+
+.route-card h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.route-card p {
+    color: var(--text);
+    font-size: 12px;
+}
+
+.center-button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+/* =========================
+   BOOKING CTA
+========================= */
+
+.booking-cta {
+    padding: 75px 0;
+    background:
+        linear-gradient(
+            110deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+    color: var(--white);
+}
+
+.booking-cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.light-tag {
+    color: #b9ddff;
+}
+
+.booking-cta h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    margin: 7px 0 10px;
+}
+
+.booking-cta p {
+    max-width: 650px;
+    color: rgba(255,255,255,0.82);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.btn-light {
+    background: var(--white);
+    color: var(--dark);
+}
+
+.btn-dark {
+    background: var(--dark);
+    color: var(--white);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background: var(--primary-dark);
+    color: #ffffff;
+}
+
+.footer-grid {
+    padding: 70px 0 55px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-brand > p {
+    color: #97A7B8;
+    font-size: 13px;
+    line-height: 1.7;
+    max-width: 330px;
+    margin: 18px 0;
+}
+
+.footer-logo .logo-text strong {
+    color: #ffffff;
+}
+
+.footer-logo .logo-text small {
+    color: #6aaeff;
+}
+
+.footer-whatsapp {
+    color: #70e2a8;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.footer-column h4 {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.footer-column a,
+.footer-column p {
+    color: #97A7B8;
+    font-size: 13px;
+}
+
+.footer-column a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom-content {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: #728295;
+    font-size: 11px;
+}
+
+
+/* =========================
+   UTILITIES
+========================= */
+
+.form-success {
+    padding: 13px;
+    border-radius: 9px;
+    background: rgba(22, 167, 101, 0.10);
+    color: #118452;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 12px;
+}
+
+.form-error {
+    padding: 13px;
+    border-radius: 9px;
+    background: #fff0f0;
+    color: #ba2929;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 12px;
+}.why-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    display: block;
+}.route-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 14px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(20, 110, 245, 0.08);
+    color: var(--primary);
+    font-size: 25px;
+}
+
+.btn-outline {
+    min-height: 48px;
+    padding: 0 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    background: var(--primary);
+    color: #ffffff;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+.btn-outline:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+}/* =========================
+   BOOKING CTA
+========================= */
+
+.booking-cta {
+    padding: 80px 0;
+    background:
+        linear-gradient(
+            110deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+    color: #ffffff;
+}
+
+.booking-cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.booking-cta-text {
+    max-width: 700px;
+}
+
+.light-tag {
+    color: #b9ddff;
+}
+
+.booking-cta h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.15;
+    margin: 8px 0 12px;
+}
+
+.booking-cta p {
+    max-width: 620px;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.btn-light {
+    background: var(--white);
+    color: var(--dark);
+}
+
+.btn-dark {
+    background: var(--dark);
+    color: #ffffff;
+}
+
+.btn-light:hover {
+    background: #f1f5f9;
+}
+
+.btn-dark:hover {
+    background: #182c43;
+}
+
+
+/* =========================================================
+   A-H TRANSPORT — FINAL COMPACT PREMIUM THEME OVERRIDES
+   Keep existing layout/sizing; apply a visible Navy / Blue / Red theme.
+========================================================= */
+
+:root {
+    --primary: #146EF5;
+    --primary-dark: #0B1F3A;
+    --secondary: #16A765;
+    --accent: #E31B23;
+
+    --dark: #0B1F3A;
+    --text: #59697A;
+    --muted: #8A98A8;
+
+    --light: #F4F7FB;
+    --white: #FFFFFF;
+    --border: #DCE5F0;
+
+    --shadow-sm: 0 8px 22px rgba(11, 31, 58, 0.07);
+    --shadow: 0 14px 34px rgba(11, 31, 58, 0.11);
+    --shadow-lg: 0 22px 55px rgba(11, 31, 58, 0.17);
+}
+
+/* Global */
+body {
+    color: var(--dark);
+    background: #F4F7FB;
+}
+
+::selection {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* Top bar */
+.top-bar {
+    background: var(--primary-dark);
+}
+
+.top-whatsapp {
+    color: #7EE7B4;
+}
+
+/* Navbar — visibly premium navy */
+.navbar {
+    background: rgba(11, 31, 58, 0.97);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 8px 25px rgba(11, 31, 58, 0.12);
+}
+
+.logo-text strong {
+    color: #FFFFFF;
+}
+
+.logo-text small {
+    color: #5FA0FF;
+}
+
+.nav-menu > a {
+    color: rgba(255,255,255,0.78);
+}
+
+.nav-menu > a:hover,
+.nav-menu > a.active {
+    color: #FFFFFF;
+}
+
+.nav-menu > a:not(.nav-cta)::after {
+    background: var(--accent);
+}
+
+.nav-cta {
+    background: linear-gradient(135deg, var(--primary), #3989FF);
+    box-shadow: 0 7px 18px rgba(20, 110, 245, 0.22);
+}
+
+.menu-toggle span {
+    background: #FFFFFF;
+}
+
+/* Hero — keep size, strengthen brand colors */
+.hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(11, 31, 58, 0.92) 0%,
+            rgba(11, 31, 58, 0.64) 48%,
+            rgba(11, 31, 58, 0.16) 100%
+        ),
+        url("../assets/images/hero/hero-banner.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero h1 span {
+    color: #5FA0FF;
+}
+
+.hero-buttons .btn-primary,
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), #3989FF);
+}
+
+.hero-buttons .btn-whatsapp,
+.btn-whatsapp {
+    background: var(--secondary);
+}
+
+/* Booking card */
+.hero-card {
+    border-top: 3px solid var(--accent);
+    box-shadow: var(--shadow-lg);
+}
+
+.booking-btn {
+    background: linear-gradient(135deg, var(--primary), #3989FF);
+}
+
+.booking-btn:hover {
+    background: var(--primary-dark);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(20, 110, 245, 0.12);
+}
+
+/* Trust strip */
+.trust-strip {
+    background: #FFFFFF;
+}
+
+.trust-icon {
+    background: rgba(20, 110, 245, 0.09);
+    color: var(--primary);
+}
+
+/* Sections */
+.services-section {
+    background: #FFFFFF;
+}
+
+.routes-section {
+    background: #EEF4FA;
+}
+
+.section-tag {
+    color: var(--primary);
+}
+
+/* Service cards */
+.service-card {
+    background: #FFFFFF;
+    border-color: #DCE5F0;
+    box-shadow: var(--shadow-sm);
+}
+
+.service-card:hover {
+    border-color: rgba(20, 110, 245, 0.28);
+    box-shadow: var(--shadow);
+}
+
+.service-card a {
+    color: var(--primary);
+}
+
+/* Why Choose */
+.why-image {
+    background: #DCE8F5;
+    box-shadow: var(--shadow-sm);
+}
+
+.why-content h2 span {
+    color: var(--primary);
+}
+
+.feature-check {
+    background: rgba(22, 167, 101, 0.10);
+    color: var(--secondary);
+}
+
+/* Routes */
+.route-card {
+    background: #FFFFFF;
+    border-color: #DCE5F0;
+    box-shadow: var(--shadow-sm);
+}
+
+.route-card:hover {
+    border-color: rgba(20, 110, 245, 0.28);
+}
+
+.route-icon {
+    background: rgba(20, 110, 245, 0.09);
+    color: var(--primary);
+}
+
+/* View all routes */
+.btn-outline {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #FFFFFF;
+}
+
+.btn-outline:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+/* Booking CTA — strong brand gradient */
+.booking-cta {
+    background:
+        linear-gradient(
+            110deg,
+            var(--primary-dark) 0%,
+            #123C73 52%,
+            var(--primary) 100%
+        );
+}
+
+.btn-light {
+    color: var(--primary-dark);
+    background: #FFFFFF;
+}
+
+.btn-dark {
+    background: var(--accent);
+    color: #FFFFFF;
+}
+
+.btn-dark:hover {
+    background: #C9141B;
+}
+
+/* Footer */
+.footer {
+    background: #081627;
+}
+
+.footer-logo .logo-text strong {
+    color: #FFFFFF;
+}
+
+.footer-logo .logo-text small {
+    color: #5FA0FF;
+}
+
+.footer-column a:hover {
+    color: #FFFFFF;
+}
+
+.footer-bottom {
+    border-top-color: rgba(255,255,255,0.10);
+}
+
+/* Small red brand accent for headings/active cues */
+.booking-cta h2::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 3px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background: var(--accent);
+}/* =========================================================
+   A-H TRANSPORT — NAVBAR + HERO THEME POLISH
+========================================================= */
+
+/* Navbar */
+.navbar {
+    background: rgba(11, 31, 58, 0.97);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 22px rgba(11, 31, 58, 0.14);
+}
+
+.logo-mark {
+    background: linear-gradient(135deg, #146EF5, #3B8BFF);
+    box-shadow: 0 7px 18px rgba(20, 110, 245, 0.22);
+}
+
+.logo-text strong {
+    color: #ffffff;
+}
+
+.logo-text small {
+    color: #5FA0FF;
+}
+
+.nav-menu > a {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.nav-menu > a:hover,
+.nav-menu > a.active {
+    color: #ffffff;
+}
+
+.nav-menu > a:not(.nav-cta)::after {
+    background: #E31B23;
+}
+
+.nav-cta {
+    background: linear-gradient(135deg, #146EF5, #3989FF);
+    box-shadow: 0 7px 18px rgba(20, 110, 245, 0.24);
+}
+
+.nav-cta:hover {
+    background: linear-gradient(135deg, #0E5ED8, #2E7BEF);
+}
+
+
+/* Hero */
+.hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(11, 31, 58, 0.90) 0%,
+            rgba(11, 31, 58, 0.62) 48%,
+            rgba(11, 31, 58, 0.15) 100%
+        ),
+        url("../assets/images/hero/hero-banner.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-badge {
+    background: rgba(20, 110, 245, 0.14);
+    border-color: rgba(255, 255, 255, 0.20);
+}
+
+.hero h1 span {
+    color: #63A3FF;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #146EF5, #3989FF);
+    box-shadow: 0 10px 24px rgba(20, 110, 245, 0.24);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0E5ED8, #2E7BEF);
+}
+
+.btn-whatsapp {
+    background: #16A765;
+    box-shadow: 0 10px 24px rgba(22, 167, 101, 0.20);
+}
+
+.btn-whatsapp:hover {
+    background: #118B54;
+}
+
+
+/* Quick Booking Card */
+.hero-card {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-top: 3px solid #E31B23;
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.20);
+}
+
+.hero-card-header span:first-child {
+    color: #0B1F3A;
+}
+
+.online-dot {
+    color: #16A765;
+    background: rgba(22, 167, 101, 0.10);
+}
+
+.booking-btn {
+    background: linear-gradient(135deg, #146EF5, #3989FF);
+}
+
+.booking-btn:hover {
+    background: #0B1F3A;
+}
+
+
+/* Focus states */
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #146EF5;
+    box-shadow: 0 0 0 3px rgba(20, 110, 245, 0.12);
+}/* =========================================================
+   A-H TRANSPORT — SERVICES THEME POLISH
+========================================================= */
+
+.services-section {
+    background: #F4F7FB;
+}
+
+.services-section .section-tag {
+    color: #146EF5;
+}
+
+.service-card {
+    background: #FFFFFF;
+    border: 1px solid #DCE5F0;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(11, 31, 58, 0.07);
+    transition: 0.3s ease;
+}
+
+.service-card:hover {
+    border-color: rgba(20, 110, 245, 0.35);
+    box-shadow: 0 16px 35px rgba(11, 31, 58, 0.13);
+    transform: translateY(-5px);
+}
+
+.service-image {
+    background: #EAF1F8;
+}
+
+.service-number {
+    color: #146EF5;
+    background: rgba(20, 110, 245, 0.08);
+    padding: 5px 8px;
+    border-radius: 7px;
+}
+
+.service-card h3 {
+    color: #0B1F3A;
+}
+
+.service-card p {
+    color: #59697A;
+}
+
+.service-card a {
+    color: #146EF5;
+}
+
+.service-card a:hover {
+    color: #E31B23;
+}/* =========================================================
+   A-H TRANSPORT — WHY CHOOSE THEME POLISH
+========================================================= */
+
+.why-section {
+    background: #FFFFFF;
+}
+
+.why-image {
+    border-radius: 20px;
+    background: #DCE8F5;
+    box-shadow: 0 14px 34px rgba(11, 31, 58, 0.10);
+}
+
+.why-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.why-content .section-tag {
+    color: #146EF5;
+}
+
+.why-content h2 {
+    color: #0B1F3A;
+}
+
+.why-content h2 span {
+    color: #146EF5;
+}
+
+.why-description {
+    color: #59697A;
+}
+
+.feature-item {
+    padding: 10px 0;
+}
+
+.feature-check {
+    background: rgba(22, 167, 101, 0.10);
+    color: #16A765;
+}
+
+.feature-item h4 {
+    color: #0B1F3A;
+}
+
+.feature-item p {
+    color: #59697A;
+}
+
+.text-link {
+    color: #146EF5;
+}
+
+.text-link:hover {
+    color: #E31B23;
+}/* =========================================================
+   A-H TRANSPORT — ROUTES THEME POLISH
+========================================================= */
+
+.routes-section {
+    background:
+        linear-gradient(
+            180deg,
+            #F4F7FB 0%,
+            #EAF2FB 100%
+        );
+}
+
+.routes-section .section-tag {
+    color: #146EF5;
+}
+
+.routes-section .section-heading h2 {
+    color: #0B1F3A;
+}
+
+.routes-section .section-heading p {
+    color: #59697A;
+}
+
+.route-card {
+    background: #FFFFFF;
+    border: 1px solid #DCE5F0;
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(11, 31, 58, 0.06);
+    transition: 0.3s ease;
+}
+
+.route-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(20, 110, 245, 0.28);
+    box-shadow: 0 15px 32px rgba(11, 31, 58, 0.11);
+}
+
+.route-icon {
+    background: rgba(20, 110, 245, 0.09);
+    color: #146EF5;
+}
+
+.route-card h3 {
+    color: #0B1F3A;
+}
+
+.route-card p {
+    color: #59697A;
+}
+
+.btn-outline {
+    background: #146EF5;
+    border-color: #146EF5;
+    color: #FFFFFF;
+    box-shadow: 0 8px 20px rgba(20, 110, 245, 0.18);
+}
+
+.btn-outline:hover {
+    background: #0B1F3A;
+    border-color: #0B1F3A;
+}/* =========================================================
+   A-H TRANSPORT — BOOKING CTA + FOOTER THEME POLISH
+========================================================= */
+
+/* Booking CTA */
+.booking-cta {
+    background:
+        linear-gradient(
+            110deg,
+            #0B1F3A 0%,
+            #123C73 52%,
+            #146EF5 100%
+        );
+    border-top: 3px solid #E31B23;
+}
+
+.light-tag {
+    color: #9CC7FF;
+}
+
+.booking-cta h2 {
+    color: #FFFFFF;
+}
+
+.booking-cta p {
+    color: rgba(255, 255, 255, 0.80);
+}
+
+.btn-light {
+    background: #FFFFFF;
+    color: #0B1F3A;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.btn-light:hover {
+    background: #EAF2FF;
+    color: #146EF5;
+}
+
+.btn-dark {
+    background: #E31B23;
+    color: #FFFFFF;
+    box-shadow: 0 8px 20px rgba(227, 27, 35, 0.20);
+}
+
+.btn-dark:hover {
+    background: #C9141B;
+}
+
+
+/* Footer */
+.footer {
+    background:
+        linear-gradient(
+            135deg,
+            #081627 0%,
+            #0B1F3A 100%
+        );
+    color: #FFFFFF;
+}
+
+.footer-logo .logo-mark {
+    background: linear-gradient(135deg, #146EF5, #3989FF);
+}
+
+.footer-logo .logo-text strong {
+    color: #FFFFFF;
+}
+
+.footer-logo .logo-text small {
+    color: #5FA0FF;
+}
+
+.footer-brand > p {
+    color: #98A9BC;
+}
+
+.footer-whatsapp {
+    color: #70E2A8;
+}
+
+.footer-column h4 {
+    color: #FFFFFF;
+}
+
+.footer-column a,
+.footer-column p {
+    color: #98A9BC;
+}
+
+.footer-column a:hover {
+    color: #FFFFFF;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.footer-bottom p {
+    color: #718398;
+}
