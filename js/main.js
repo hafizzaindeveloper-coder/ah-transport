@@ -1,31 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // =========================
-    // Mobile Navigation
-    // =========================
+// Mobile Navigation
+// =========================
+
+document.addEventListener("DOMContentLoaded", function () {
 
     const menuToggle = document.getElementById("menuToggle");
     const navMenu = document.getElementById("navMenu");
 
+
     if (menuToggle && navMenu) {
 
-        menuToggle.addEventListener("click", () => {
 
-            const isOpen = navMenu.classList.toggle("active");
+        menuToggle.addEventListener("click", function () {
+
+            navMenu.classList.toggle("active");
+
+            const isOpen = navMenu.classList.contains("active");
 
             menuToggle.setAttribute(
                 "aria-expanded",
                 isOpen ? "true" : "false"
             );
+
         });
 
 
-        // Close menu after clicking a link
+
         const navLinks = navMenu.querySelectorAll("a");
 
-        navLinks.forEach((link) => {
+        navLinks.forEach(function(link){
 
-            link.addEventListener("click", () => {
+            link.addEventListener("click", function(){
 
                 navMenu.classList.remove("active");
 
@@ -38,8 +45,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
+
+
+        document.addEventListener("click", function(event){
+
+            if (
+                !navMenu.contains(event.target) &&
+                !menuToggle.contains(event.target)
+            ) {
+
+                navMenu.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+
     }
 
+});
 
     // =========================
     // Current Year
