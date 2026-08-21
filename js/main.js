@@ -1,129 +1,126 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-    // =========================
+// =========================
 // Mobile Navigation
 // =========================
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
 
 
-    if (menuToggle && navMenu) {
+if (menuToggle && navMenu) {
+
+    menuToggle.addEventListener("click", () => {
+
+        const isOpen = navMenu.classList.toggle("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+    });
 
 
-        menuToggle.addEventListener("click", function () {
+    const navLinks = navMenu.querySelectorAll("a");
 
-            navMenu.classList.toggle("active");
 
-            const isOpen = navMenu.classList.contains("active");
+    navLinks.forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+            navMenu.classList.remove("active");
 
             menuToggle.setAttribute(
                 "aria-expanded",
-                isOpen ? "true" : "false"
+                "false"
             );
 
         });
 
+    });
 
 
-        const navLinks = navMenu.querySelectorAll("a");
+    document.addEventListener("click", (event) => {
 
-        navLinks.forEach(function(link){
+        if (
+            !navMenu.contains(event.target) &&
+            !menuToggle.contains(event.target)
+        ) {
 
-            link.addEventListener("click", function(){
+            navMenu.classList.remove("active");
 
-                navMenu.classList.remove("active");
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
+        }
 
-            });
+    });
 
-        });
-
-
-
-        document.addEventListener("click", function(event){
-
-            if (
-                !navMenu.contains(event.target) &&
-                !menuToggle.contains(event.target)
-            ) {
-
-                navMenu.classList.remove("active");
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            }
-
-        });
+}
 
 
-    }
+// =========================
+// Current Year
+// =========================
 
-});
+const currentYear = document.getElementById("currentYear");
 
-    // =========================
-    // Current Year
-    // =========================
+if (currentYear) {
 
-    const currentYear = document.getElementById("currentYear");
+    currentYear.textContent = new Date().getFullYear();
 
-    if (currentYear) {
-        currentYear.textContent = new Date().getFullYear();
-    }
+}
 
 
-    // =========================
-    // Minimum Booking Date
-    // =========================
+// =========================
+// Minimum Booking Date
+// =========================
 
-    const travelDate = document.getElementById("travelDate");
+const travelDate = document.getElementById("travelDate");
 
-    if (travelDate) {
+if (travelDate) {
 
-        const today = new Date();
+    const today = new Date();
 
-        const year = today.getFullYear();
+    const year = today.getFullYear();
 
-        const month = String(
-            today.getMonth() + 1
-        ).padStart(2, "0");
+    const month = String(
+        today.getMonth() + 1
+    ).padStart(2, "0");
 
-        const day = String(
-            today.getDate()
-        ).padStart(2, "0");
-
-        travelDate.min = `${year}-${month}-${day}`;
-    }
+    const day = String(
+        today.getDate()
+    ).padStart(2, "0");
 
 
-    // =========================
-    // Navbar Shadow on Scroll
-    // =========================
+    travelDate.min = `${year}-${month}-${day}`;
 
-    const navbar = document.getElementById("navbar");
+}
 
-    if (navbar) {
 
-        window.addEventListener("scroll", () => {
+// =========================
+// Navbar Shadow on Scroll
+// =========================
 
-            if (window.scrollY > 20) {
-                navbar.style.boxShadow =
-                    "0 8px 25px rgba(16, 32, 51, 0.08)";
-            } else {
-                navbar.style.boxShadow = "none";
-            }
+const navbar = document.getElementById("navbar");
 
-        });
 
-    }
+if (navbar) {
 
-});
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 20) {
+
+            navbar.style.boxShadow =
+                "0 8px 25px rgba(16, 32, 51, 0.08)";
+
+        } else {
+
+            navbar.style.boxShadow = "none";
+
+        }
+
+    });
+
+}
